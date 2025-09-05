@@ -7,10 +7,10 @@ resource "google_edgecontainer_node_pool" "compliant" {
 
   node_config {
     labels = {
-      environment  = "production"    # ✅ Valid environment
-      team         = "platform"      # ✅ Has team label
-      cost-center  = "platform-123"  # ✅ Has cost-center
-      custom       = "value"         # ✅ Optional custom labels
+      environment  = "production"    # Valid environment
+      team         = "platform"      # Has team label
+      cost-center  = "platform-123"  # Has cost-center
+      custom       = "value"         # Optional custom labels
     }
   }
 }
@@ -24,9 +24,9 @@ resource "google_edgecontainer_node_pool" "compliant_dev" {
 
   node_config {
     labels = {
-      environment  = "dev"           # ✅ Valid environment
-      team         = "development"   # ✅ Has team label  
-      cost-center  = "dev-456"       # ✅ Has cost-center
+      environment  = "dev"           # Valid environment
+      team         = "development"   # Has team label  
+      cost-center  = "dev-456"       # Has cost-center
     }
   }
 }
