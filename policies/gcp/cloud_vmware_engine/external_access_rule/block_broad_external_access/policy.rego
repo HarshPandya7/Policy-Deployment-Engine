@@ -1,39 +1,20 @@
-package terraform.gcp.security.cloud_vmware_engine.external_access_rule.block_broad_external_access
+package terraform.gdce.deployment.block_privileged_containers
 import data.terraform.gcp.helpers
-import data.terraform.gcp.security.cloud_vmware_engine.external_access_rule.vars
-
-
+import data.terraform.gdce.deployment.vars
 
 conditions := [
     [
-    {"situation_description" : "ip range is too broad",
-    "remedies":[ "Set  ip range for required ips and make sure that all ports are not opened"]},
-    {
-        "condition": "c1 0.0.0.0/0 not allowed",
-        "attribute_path" : ["source_ip_ranges",0,"ip_address_range"], 
-        "values" : ["0.0.0.0/0"],
-        "policy_type" : "blacklist" 
-    },
-
+        {"situation_description": "Privileged containers are not allowed for security reasons",
+         "remedies": ["Remove privileged: true from container securityContext", "Use specific capabilities instead of privileged mode"]},
         {
-        "condition": "c2 valid for tcp or udp",
-        "attribute_path" : ["ip_protocol"], 
-        "values" : ["TCP","UDP"],
-        "policy_type" : "blacklist"
-    },
-
-    {
-        "condition": "c3 check if all ports are open",
-        "attribute_path" : ["source_ports",0],
-        "values" : ["*"], 
-        "policy_type" : "blacklist" 
-    }
-
+            "condition": "privileged_container_check",
+            "attribute_path": ["spec", "template", "spec", "containers", "*", "securityContext", "privileged"], 
+            "values": [true],
+            "policy_type": "blacklist"
+        }
     ]
 ]
 
 summary := helpers.get_multi_summary(conditions, vars.variables)
 message := summary.message
-
-
-details := helpers.get_multi_summary(conditions, vars.variables).details
+details := summary.details

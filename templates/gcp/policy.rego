@@ -1,4 +1,4 @@
-package terraform.gcp.security.<service>.<resource_type>.<policy_name> # Edit here 
+package terraform.gcp.security.gdce.cluster.target_version # Edit here 
 import data.terraform.gcp.helpers
 import data.terraform.gcp.security.<service>.<resource_type>.vars
 
