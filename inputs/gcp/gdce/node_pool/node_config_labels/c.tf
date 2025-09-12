@@ -16,17 +16,17 @@ resource "google_edgecontainer_node_pool" "compliant" {
 }
 
 resource "google_edgecontainer_node_pool" "compliant_dev" {
-  name          = "np-dev-workers"
-  location      = "australia-southeast1"
-  cluster       = "gdceclusterlabels-c"
-  node_location = "us-central1-edge-customer-a"
-  node_count    = 2
+  name          = "np-dev-workers" #Required
+  location      = "australia-southeast1" #Required
+  cluster       = "gdceclusterlabels-c" #Required
+  node_location = "us-central1-edge-customer-a" #Required
+  node_count    = 2 #Required
 
   node_config {
     labels = {
       environment  = "dev"           # Valid environment
       team         = "development"   # Has team label  
       cost-center  = "dev-456"       # Has cost-center
-    }
+    } #Policy to be tested 
   }
 }

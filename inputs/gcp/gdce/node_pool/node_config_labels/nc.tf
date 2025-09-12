@@ -1,9 +1,9 @@
 resource "google_edgecontainer_node_pool" "non_compliant" {
-  name          = "np-invalid-labels"
-  location      = "australia-southeast1"
-  cluster       = "gdceclusterlabels-c"
-  node_location = "us-central1-edge-customer-a"
-  node_count    = 2
+  name          = "np-invalid-labels" #Required
+  location      = "australia-southeast1" #Required
+  cluster       = "gdceclusterlabels-c" #Required
+  node_location = "us-central1-edge-customer-a" #Required
+  node_count    = 2  #Required
 
   node_config {
     labels = {

@@ -1,9 +1,9 @@
 
 resource "google_edgecontainer_cluster" "nc" {
-  name     = "gdceclusterlabels-nc"
-  location = "australia-southeast1"
+  name     = "gdceclusterlabels-nc" #Required 
+  location = "australia-southeast1" #Required 
   
-  default_max_pods_per_node = 110  #(exceeds 30)
+  default_max_pods_per_node = 110  #(exceeds 30) (Policy to be tested)
   networking {
     #overly permissive CIDR ranges
     cluster_ipv4_cidr_blocks  = ["0.0.0.0/0"]
@@ -14,11 +14,11 @@ resource "google_edgecontainer_cluster" "nc" {
     #invalid/unapproved admin email
     admin_users {
       username = "invalid@example.com"
-    }
+    } #Required 
   }
 
   fleet {
     #hardcoded project number instead of dynamic lookup
     project = "projects/1234567890"
-  }
+  } #Required 
 }
