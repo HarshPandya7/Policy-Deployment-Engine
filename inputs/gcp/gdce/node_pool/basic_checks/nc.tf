@@ -1,5 +1,5 @@
-resource "google_edgecontainer_node_pool" "basic_non_compliant" {
-  name          = "invalid-name"           # Doesn't start with np- #Required
+resource "google_edgecontainer_node_pool" "nc" {
+  name          = "np-invalid_name-nc"            #Required
   location      = "australia-southeast1" #Required
   cluster       = "gdceclusterlabels-nc"   # Valid cluster (but will fail other checks) #Required
   node_location = "invalid-location"       # Not approved location #Required

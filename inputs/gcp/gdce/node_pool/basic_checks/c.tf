@@ -1,6 +1,6 @@
-resource "google_edgecontainer_node_pool" "basic_compliant" { 
+resource "google_edgecontainer_node_pool" "c" { 
   #This is basic check policy, as i need to compulsary do this to test other policies, so that is why this module is named basic_checks 
-  name          = "np-production-workers"  # Starts with np-  #Required
+  name          = "np-production_workers-c"  #  #Required
   location      = "australia-southeast1" #Required
   cluster       = "gdceclusterlabels-c"    # Valid cluster #Required
   node_location = "us-central1-edge-customer-a"  # Approved location #Required

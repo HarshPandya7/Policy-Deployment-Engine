@@ -1,5 +1,5 @@
-resource "google_edgecontainer_node_pool" "project_non_compliant" {
-  name          = "np-monitoring"          #  Good name
+resource "google_edgecontainer_node_pool" "nc" {
+  name          = "np-monitoring-nc"          #  Good name
   location      = "australia-southeast1"
   cluster       = "gdceclusterlabels-c"    #  Valid cluster
   node_location = "us-central1-edge-customer-a"  #  Approved location

@@ -1,5 +1,5 @@
-resource "google_edgecontainer_node_pool" "non_compliant" {
-  name          = "np-invalid-labels" #Required
+resource "google_edgecontainer_node_pool" "nc" {
+  name          = "np-invalid_labels-nc" #Required
   location      = "australia-southeast1" #Required
   cluster       = "gdceclusterlabels-c" #Required
   node_location = "us-central1-edge-customer-a" #Required
@@ -14,8 +14,8 @@ resource "google_edgecontainer_node_pool" "non_compliant" {
   }
 }
 
-resource "google_edgecontainer_node_pool" "no_labels" {
-  name          = "np-no-labels"
+resource "google_edgecontainer_node_pool" "nc-no_labels" {
+  name          = "np-no-labels-nc-no_labels"
   location      = "australia-southeast1"
   cluster       = "gdceclusterlabels-c"
   node_location = "us-central1-edge-customer-a"

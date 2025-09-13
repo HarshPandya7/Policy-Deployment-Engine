@@ -1,5 +1,5 @@
-resource "google_edgecontainer_node_pool" "compliant" {
-  name          = "np-encrypted-workers" #Required
+resource "google_edgecontainer_node_pool" "c" {
+  name          = "np-encrypted_workers-c" #Required
   location      = "australia-southeast1" #Required
   cluster       = "gdceclusterlabels-c" #Required
   node_location = "us-central1-edge-customer-a" #Required

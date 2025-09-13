@@ -1,5 +1,5 @@
-resource "google_edgecontainer_node_pool" "non_compliant" {
-  name          = "np-invalid-encryption" #Required
+resource "google_edgecontainer_node_pool" "nc" {
+  name          = "np-invalid_encryption-nc" #Required
   location      = "australia-southeast1" #Required
   cluster       = "gdceclusterlabels-c" #Required
   node_location = "us-central1-edge-customer-a" #Required

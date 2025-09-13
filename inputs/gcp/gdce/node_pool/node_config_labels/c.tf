@@ -1,5 +1,5 @@
-resource "google_edgecontainer_node_pool" "compliant" {
-  name          = "np-production-workers"
+resource "google_edgecontainer_node_pool" "c" {
+  name          = "np-production_workers-c"
   location      = "australia-southeast1"
   cluster       = "gdceclusterlabels-c"
   node_location = "us-central1-edge-customer-a"
@@ -15,8 +15,8 @@ resource "google_edgecontainer_node_pool" "compliant" {
   }
 }
 
-resource "google_edgecontainer_node_pool" "compliant_dev" {
-  name          = "np-dev-workers" #Required
+resource "google_edgecontainer_node_pool" "c_dev" {
+  name          = "np-dev-workers-c_dev" #Required
   location      = "australia-southeast1" #Required
   cluster       = "gdceclusterlabels-c" #Required
   node_location = "us-central1-edge-customer-a" #Required
